@@ -1,0 +1,135 @@
+<DOCTYPE = html>
+
+<html>
+
+<head>
+
+<style>
+
+#board {
+    position: relative;
+    height: 450px;
+    width: 450px;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.squares {
+    float: left;
+    height: 150px;
+    width: 150px;
+    background-color: #fbf3f1;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    font-size: 40pt;
+    text-align: center;
+    line-height: 150px;
+}
+
+p {
+    font: 16pt "Times New Roman", Times, serif;
+    color: #06052e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button onclick = "clearGame()">New Game</button>
+<p id ="demo">Think you can beat Sir RNGington?</p>
+<div id = "board">
+<div class = "squares" onclick ="userInput(0)"></div>
+<div class = "squares" onclick ="userInput(1)"></div>
+<div class = "squares" onclick ="userInput(2)"></div>
+<div class = "squares" onclick ="userInput(3)"></div>
+<div class = "squares" onclick ="userInput(4)"></div>
+<div class = "squares" onclick ="userInput(5)"></div>
+<div class = "squares" onclick ="userInput(6)"></div>
+<div class = "squares" onclick ="userInput(7)"></div>
+<div class = "squares" onclick ="userInput(8)"></div>
+</div>
+
+<script>
+
+var square = document.getElementById("board").querySelectorAll(".squares");
+var i = 0;
+for (i; i < square.length; i++) {
+square[i].value = 0;
+}
+
+function clearGame () {
+    for (i = 0; i < square.length; i++) {
+    square[i].innerHTML = "";
+    square[i].value = 0;
+    document.getElementById("demo").innerHTML = "Think you can beat the RNG?";
+    var id = setInterval(winner,5);
+    winner();
+}
+}
+
+var id = setInterval (winner, 5);
+function winner () {
+    if (square[0].value + square[1].value + square[2].value == 3 ||
+    square[3].value + square[4].value + square[5].value == 3 ||
+    square[7].value + square[6].value + square[8].value == 3 ||
+    square[0].value + square[3].value + square[6].value == 3 ||
+    square[1].value + square[4].value + square[7].value == 3 ||
+    square[2].value + square[5].value + square[8].value == 3 ||
+    square[0].value + square[4].value + square[8].value == 3 ||
+    square[2].value + square[4].value + square[6].value == 3) {
+        document.getElementById("demo").innerHTML = "You win!";
+        clearInterval(id);
+        for (i = 0; i < square.length; i++) {
+            square[i].value = 10;
+    }
+} else if (square[0].value + square[1].value + square[2].value == 12 ||
+    square[3].value + square[4].value + square[5].value == 12 ||
+    square[7].value + square[6].value + square[8].value == 12 ||
+    square[0].value + square[3].value + square[6].value == 12 ||
+    square[1].value + square[4].value + square[7].value == 12 ||
+    square[2].value + square[5].value + square[8].value == 12 ||
+    square[0].value + square[4].value + square[8].value == 12 ||
+    square[2].value + square[4].value + square[6].value == 12) {
+        document.getElementById("demo").innerHTML = "You lost to a RNG?!";
+        clearInterval(id);
+        for (i = 0; i < square.length; i++) {
+            square[i].value = 10;
+    }
+}
+if (square[0].value + square[1].value + square[2].value + square[3].value +
+    square[4].value + square[5].value + square[6].value + square[7].value +
+    square[8].value === 21) {
+        document.getElementById("demo").innerHTML = "It's a draw.";
+        clearInterval(id);
+    }
+}
+
+function userInput (num) {
+    if (square[num].value == 0) {
+        square[num].innerHTML = "X";
+        square[num].value = 1;
+} else {
+    return;
+}
+computerInput();
+}
+
+function computerInput () {
+    var choice = Math.floor(Math.random() * 9);
+    if (square[choice].value == 0) {
+        square[choice].innerHTML = "O";
+        square[choice].value = 4;
+} else if (square[choice].value == 1 || square[choice].value == 4) {
+    computerInput();
+}
+}
+
+</script>
+
+</body>
+
+</html>
