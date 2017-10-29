@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+
+<HTML>
+
+<Header>
+
+<style>
+
+#quiz {
+background-image: url("https://vignette.wikia.nocookie.net/metalgear/images/e/e1/Metal_Gear_Solid_1_The_Twin_Snakes_Heroes.jpg/revision/latest?cb=20130120014950");
+background-repeat: no-repeat;
+background-position: top;
+background-color: #f2f2f2;
+width: 100%;
+box-sizing: border-box;
+}
+
+#quiz h1 {
+font-size: 16pt;
+color: #0b5345;
+background-color: #f2f2f2;
+opacity: 0.9;
+text-align: center;
+}
+
+#quiz h2 {
+font-size:  14pt;
+color:  #0b5345;
+background-color: #f2f2f2;
+opacity: 0.6;
+}
+
+#quiz p {
+font-size:  12pt;
+color:  #0b5345;
+ text-shadow: 1px 1px #ffffff;
+ background-color: #f2f2f2;
+}
+
+#quiz button {
+background-color: #b3343b;
+color: #ffffff;
+font-size: 10pt;
+border-color: black;
+margin-bottom: 10px;
+
+}
+
+#end button {
+padding: 10px 20px;
+}
+
+</style>
+
+</header>
+
+<body>
+
+<div id = "quiz">
+<h1>
+Metal Gear?!?  Tell me what you know about Metal Gear!!!
+Don't even try to use Google or I'll know.  There are no continues my friend.
+</h1>
+
+<div class = "questions">
+<p>
+1)  After Psycho Mantis' defeat, when Meryl asks Snake how old he is, what is his reply?
+</p>
+<button class = 'options' onclick = "revealQuestions(1, 1)">
+35.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(1, 2)">
+Old enough to know what death looks like.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(1, 3)">
+Never needed to know.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(1, 4)">
+42.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+2)  What happens when you use auto-fire during the torture event on the PS1 version?
+</p>
+<button class = 'options' onclick = "revealQuestions(2, 1)">
+Nothing happens.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(2, 2)">
+Ocelot tortures you to death calling you a cheater.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(2, 3)">
+The torture session never ends.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(2, 4)">
+Ocelot says you're a brave man for using auto-fire despite the risks and you live.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+3)  What does Snake believe is Liquid's message when he finds the parachute after the Hind fight?
+</p>
+<button class = 'options' onclick = "revealQuestions(3, 1)">
+He wants Snake to know he's still alive.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(3, 2)">
+He simply left it behind in the crash.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(3, 3)">
+He thinks Liquid is saying: "I'll string you up."
+</button></br>
+<button class = 'options' onclick = "revealQuestions(3, 4)">
+He thinks Liquid is saying: "Nice chute Snake."
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+4)  How many rations can you use and still recieve Big Boss rank on extreme?
+</p>
+<button class = 'options' onclick = "revealQuestions(4, 1)">
+0
+</button></br>
+<button class = 'options' onclick = "revealQuestions(4, 2)">
+1
+</button></br>
+<button class = 'options' onclick = "revealQuestions(4, 3)">
+2
+</button></br>
+<button class = 'options' onclick = "revealQuestions(4, 4)">
+Rations do not spawn on extreme.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+5)  What was Meryl's codec number on the back of the cd case?
+</p>
+<button class = 'options' onclick = "revealQuestions(5, 1)">
+141.80
+</button></br>
+<button class = 'options' onclick = "revealQuestions(5, 2)">
+141.52
+</button></br>
+<button class = 'options' onclick = "revealQuestions(5, 3)">
+141.12
+</button></br>
+<button class = 'options' onclick = "revealQuestions(5, 4)">
+140.15
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+6)  What was the name of the submarine Snake used during Shadows Moses?
+</p>
+<button class = 'options' onclick = "revealQuestions(6, 1)">
+The USS Trident.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(6, 2)">
+The USS Fox.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(6, 3)">
+The USS Discovery.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(6, 4)">
+The USS Observer.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+7)  What drug does Sniper Wolf often take to aid her sniping abilities?
+</p>
+<button class = 'options' onclick = "revealQuestions(7, 1)">
+Valium.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(7, 2)">
+Benezepine.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(7, 3)">
+Diaphene.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(7, 4)">
+Diazepam.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+8)  "In the Middle East we don't hunt foxes, we hunt jackals.  Instead of using foxhounds, we use:
+</p>
+<button class = 'options' onclick = "revealQuestions(8, 1)">
+Greyhound."
+</button></br>
+<button class = 'options' onclick = "revealQuestions(8, 2)">
+Royal harriers."
+</button></br>
+<button class = 'options' onclick = "revealQuestions(8, 3)">
+Bloodhounds."
+</button></br>
+<button class = 'options' onclick = "revealQuestions(8, 4)">
+Jackalhounds."
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+9)  How does Snake smuggle in his cigarettes to Shadow Moses?
+</p>
+<button class = 'options' onclick = "revealQuestions(9, 1)">
+In his stomach.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(9, 2)">
+In his pocket.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(9, 3)">
+In his anus.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(9, 4)">
+He demands to take them with them and they ok it.
+</button></br>
+</div>
+
+<div class = "questions">
+<p>
+10)  Before becoming a data analyst, Mei Ling admits that she originally wanted to be:
+</p>
+<button class = 'options' onclick = "revealQuestions(10, 1)">
+A navy captain.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(10, 2)">
+A game designer.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(10, 3)">
+A field medic.
+</button></br>
+<button class = 'options' onclick = "revealQuestions(10, 4)">
+A fighter pilot.
+</button></br>
+</div>
+
+<div id = "end">
+<button class = 'options' onclick = "score()"> Score </button>
+<strong><h2 id = "demo"></p></strong>
+</div>
+</div>
+
+<script>
+
+var userInput = [];
+var questions = document.getElementById("quiz").querySelectorAll('.questions');
+var options = document.getElementById("quiz").querySelectorAll('.options');
+var i = 0;
+for (i; i < questions.length; i++) {
+    questions[i].style.visibility = "hidden";
+    questions[0].style.visibility = "visible";
+}
+
+function revealQuestions (a, c) {
+    var b = a - 1;
+    var d = questions.length;
+    if (a === d) {
+        userInput.push(c);
+        questions[b].style.visibility = "hidden";
+        console.log(userInput);
+    } else {
+        questions[b].style.visibility = "hidden";
+        questions[a].style.visibility = "visible";
+        userInput.push(c);
+        console.log(userInput);
+    }
+}
+
+function score () {
+
+var i = 0;
+var score = 0;
+var answers = [2, 1, 3, 2, 4, 3, 4, 2, 1, 4];
+var reveal = document.getElementById("demo");
+
+for (i; i < answers.length; i++) {
+    if (answers[i] == userInput[i]) {
+        score += 10;
+        questions[i].style.visibility = "visible";
+        questions[i].style.backgroundColor = "#9ef174";
+        questions[i].style.opacity = 0.8;
+    } else {
+        score += 0;
+        questions[i].style.visibility = "visible";
+        questions[i].style.backgroundColor = "#f99797";
+        questions[i].style.opacity = 0.8;
+        }
+    }
+
+    switch (score) {
+
+        case 100:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Big Boss.";
+        break;
+
+        case 90:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Fox.";
+        break;
+
+        case 80:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Snake.";
+        break;
+
+        case 70:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Doberman.";
+        break;
+
+        case 60:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Hound.";
+        break;
+
+        case 50:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Eagle.";
+        break;
+
+        case 40:
+        reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Mongoose.";
+        break;
+
+       case 30:
+       reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Scorpion.";
+       break;
+
+       case 20:
+       reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Flying Squirrel.";
+       break;
+
+       case 10:
+       reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Bat.";
+       break;
+
+       case 0:
+       reveal.innerHTML = "Your scored:  " + score + ".  Codename:  Raiden.";
+       break;
+
+       default:
+       reveal.innerHTML = "Sorry there must have been an error somewhere.";
+       break;
+    }
+}
+</script>
+
+</body>
+
+</html>
