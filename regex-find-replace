@@ -1,0 +1,6 @@
+Good search and replace function for later use.
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
