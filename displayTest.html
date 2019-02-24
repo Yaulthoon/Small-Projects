@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1 onclick="turnOff()">Test</h1>
+  <div class='content'>
+    <div id="infoPage"> test </div>
+  </div>
+
+  <script>
+    var CustomNGIf = function(element, callback, propertyName) {
+      var _value = null;
+
+      // Create copies of elements do that you can store/use it in future
+      this.parent = element.parentNode;
+      this.element = element;
+      this.clone = null;
+
+      // Create a property that is supposed to be watched
+      Object.defineProperty(this, propertyName, {
+        get: function() {
+          return _value;
+        },
+        set: function(value) {
+          // If same value is passed, do nothing.
+          if (_value === value) return;
+          _value = !!value;
+          this.handleChange(_value);
+        }
+      });
+
+      this.handleChange = function(value) {
+        this.clone = this.element.cloneNode(true);
+        if (_value) {
+          var index = Array.from(this.parent.children).indexOf(this.element);
+
+          // Check if element is already existing or not.
+          // This can happen if some code breaks before deleting node.
+          if (index >= 0) return;
+          this.element = this.clone.cloneNode(true);
+          this.parent.appendChild(this.element);
+        } else {
+          this.element.remove();
+        }
+
+        // For any special handling
+        callback && callback();
+      }
+    }
+
+    var div = document.getElementById('infoPage');
+    const propName = 'value';
+    var obj = new CustomNGIf(div, function() {
+      console.log("change")
+    }, propName);
+
+    function turnOff() {
+      if (obj[propName]) {
+        obj[propName] = false;
+      } else {
+        obj[propName] = true;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
